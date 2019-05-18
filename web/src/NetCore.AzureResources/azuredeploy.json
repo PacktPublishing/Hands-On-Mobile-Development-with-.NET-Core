@@ -1,0 +1,119 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "resourceNameCache": {
+      "defaultValue": "handsoncore",
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 18,
+      "metadata": {
+        "description": "Used as the resource name for Redis cache resource"
+      }
+    },
+    "resourceNameServicePlan": {
+      "defaultValue": "handsoncorePlan",
+      "type": "string",
+      "metadata": {
+        "description": "Used as the resource name for the App Service Plan"
+      }
+    },
+    "resourceNameUsersApi": {
+      "defaultValue": "usersapi",
+      "type": "string",
+      "metadata": {
+        "description":  "Used as the resource name for the Users Api app service" 
+      }
+    }
+  },
+  "variables": {
+    "redisConnectionString": "[concat(parameters('resourceNameCache'), '.redis.cache.windows.net:6380,abortConnect=false,ssl=true,password=')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Cache/Redis",
+      "apiVersion": "2017-10-01",
+      "name": "[parameters('resourceNameCache')]",
+      "location": "Central US",
+      "properties": {
+        "sku": {
+          "name": "Basic",
+          "family": "C",
+          "capacity": 0
+        },
+        "enableNonSslPort": false,
+        "redisConfiguration": {
+          "maxclients": "256"
+          //"maxmemory-reserved": "2",
+          //"maxfragmentationmemory-reserved": "12",
+          //"maxmemory-delta": "2"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "apiVersion": "2016-09-01",
+      "name": "[parameters('resourceNameServicePlan')]",
+      "location": "Central US",
+      "sku": {
+        "name": "S1",
+        "tier": "Standard",
+        "size": "S1",
+        "family": "S",
+        "capacity": 1
+      },
+      "kind": "app",
+      "properties": {
+        "name": "[parameters('resourceNameServicePlan')]",
+        "perSiteScaling": false,
+        "reserved": false,
+        "targetWorkerCount": 0,
+        "targetWorkerSizeId": 0
+      }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "apiVersion": "2016-08-01",
+      "name": "[parameters('resourceNameUsersApi')]",
+      "location": "Central US",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/serverfarms', parameters('resourceNameServicePlan'))]",
+        "[resourceId('Microsoft.Cache/Redis', parameters('resourceNameCache'))]"
+      ],
+      "tags": {
+      },
+      "kind": "app",
+      "properties": {
+        "enabled": true,
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', parameters('resourceNameServicePlan'))]",
+        "reserved": false,
+        "scmSiteAlsoStopped": false,
+        "clientAffinityEnabled": true,
+        "clientCertEnabled": false,
+        "hostNamesDisabled": false,
+        "containerSize": 0,
+        "dailyMemoryTimeQuota": 0,
+        "httpsOnly": false,
+        "siteConfig": {
+          "connectionStrings": [
+            {
+              "name": "AzureRedisCache",
+              "type": "custom",
+              "connectionString": "[concat(variables('redisConnectionString'), listKeys(resourceId('Microsoft.Cache/Redis', parameters('resourceNameCache')), '2017-10-01').primaryKey)]"
+            }
+          ] 
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "redisConnectionString": {
+      "type": "string",
+      "value": "[concat(variables('redisConnectionString'), listKeys(resourceId('Microsoft.Cache/Redis', parameters('resourceNameCache')), '2017-10-01').primaryKey)]"
+    },
+    "userApiAppResource": {
+      "type": "string",
+      "value": "[parameters('resourceNameUsersApi')]"
+    } 
+  }
+}

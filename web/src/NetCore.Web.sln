@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Data", "NetCore.Data\NetCore.Data.csproj", "{963398DF-EE0B-4A79-9692-60F5B5015EA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Data.Cosmos", "NetCore.Data.Cosmos\NetCore.Data.Cosmos.csproj", "{467ECDEA-044F-43B2-8EA8-DCC829F9C0B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{15790D4B-7E0A-4EFF-9CF7-7D9A5848C7D7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Web.UsersApi", "NetCore.Web.UsersApi\NetCore.Web.UsersApi.csproj", "{6D0703DF-D37C-44AD-9480-6197C37E094D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Serverless", "NetCore.Serverless\NetCore.Serverless.csproj", "{576FB7CC-4047-4922-BE43-BCB973220C7C}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "NetCore.Serverless.LogicApp", "NetCore.Serverless.LogicApp\NetCore.Serverless.LogicApp.deployproj", "{44E09089-B04F-43C7-B6C3-60889DFA8006}"
+EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "NetCore.AzureResources", "NetCore.AzureResources\NetCore.AzureResources.deployproj", "{91D76820-2D7A-402C-B8E7-1AA7A72FEFD6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{963398DF-EE0B-4A79-9692-60F5B5015EA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{963398DF-EE0B-4A79-9692-60F5B5015EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{963398DF-EE0B-4A79-9692-60F5B5015EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{963398DF-EE0B-4A79-9692-60F5B5015EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467ECDEA-044F-43B2-8EA8-DCC829F9C0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467ECDEA-044F-43B2-8EA8-DCC829F9C0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467ECDEA-044F-43B2-8EA8-DCC829F9C0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467ECDEA-044F-43B2-8EA8-DCC829F9C0B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D0703DF-D37C-44AD-9480-6197C37E094D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0703DF-D37C-44AD-9480-6197C37E094D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0703DF-D37C-44AD-9480-6197C37E094D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D0703DF-D37C-44AD-9480-6197C37E094D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{576FB7CC-4047-4922-BE43-BCB973220C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{576FB7CC-4047-4922-BE43-BCB973220C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{576FB7CC-4047-4922-BE43-BCB973220C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{576FB7CC-4047-4922-BE43-BCB973220C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44E09089-B04F-43C7-B6C3-60889DFA8006}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E09089-B04F-43C7-B6C3-60889DFA8006}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44E09089-B04F-43C7-B6C3-60889DFA8006}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44E09089-B04F-43C7-B6C3-60889DFA8006}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91D76820-2D7A-402C-B8E7-1AA7A72FEFD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91D76820-2D7A-402C-B8E7-1AA7A72FEFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91D76820-2D7A-402C-B8E7-1AA7A72FEFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91D76820-2D7A-402C-B8E7-1AA7A72FEFD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6D0703DF-D37C-44AD-9480-6197C37E094D} = {15790D4B-7E0A-4EFF-9CF7-7D9A5848C7D7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36B84E6F-BD5D-40F9-8584-00A4E836BE51}
+	EndGlobalSection
+EndGlobal
