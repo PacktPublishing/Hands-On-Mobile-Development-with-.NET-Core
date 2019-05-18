@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="FirstXamarinFormsApplication.LoginView"
+    x:Name="RootView"
+    xmlns:local="clr-namespace:FirstXamarinFormsApplication"
+    xmlns:controls="using:FirstXamarinFormsApplication.Client.Controls"
+    xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
+    xmlns:effects="using:FirstXamarinFormsApplication.Client.Effects"
+    xmlns:behaviors="clr-namespace:FirstXamarinFormsApplication.Client.Behaviors">
+    <ContentPage.BindingContext>
+        <local:LoginViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="signUpButton" Text="Sign Up" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="20">
+<!--            <Label Text="{behaviors:Translate LblUsername}" />
+                    <Entry x:Name="usernameEntry" Placeholder="username" Text="{Binding UserName, Mode=OneWayToSource}" >
+                       <Entry.Behaviors>
+                            <behaviors:ValidationBehavior x:Name="UserNameValidation" ValidationRule="{Binding BindingContext.UserNameValidation, Source={x:Reference RootView}}" />
+                        </Entry.Behaviors>
+                        <Entry.Effects>
+                            <effects:EnableHint />
+                        </Entry.Effects>
+                    </Entry>
+            <Label Text="{behaviors:Translate LblRequiredError}" FontSize="12" TextColor="Gray" IsVisible="{Binding HasError, Source={x:Reference UserNameValidation}}"/>
+            -->
+            <controls:ValidatableEntry 
+                Label="{behaviors:Translate LblUsername}" 
+                Placeholder="{behaviors:Translate LblUsername}" 
+                ValidationRule="{Binding UserNameValidation}"
+                Value="{Binding UserName, Mode=OneWayToSource}"/>
+                        <ContentView>
+           <OnPlatform x:TypeArguments="View">
+                <On Platform="iOS">
+                   <Label Text="Password" />
+                </On>
+            </OnPlatform>
+                </ContentView>
+            
+            <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password" Text="{Binding Password, Mode=OneWayToSource}" />
+            <Button x:Name="loginButton" Text="Login" Command="{Binding LoginCommand}" />
+            <Label x:Name="messageLabel" Text="{Binding Result}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

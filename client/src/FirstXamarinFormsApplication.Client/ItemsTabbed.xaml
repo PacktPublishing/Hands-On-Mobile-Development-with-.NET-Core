@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:local="using:FirstXamarinFormsApplication.Client"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FirstXamarinFormsApplication.Client.ItemsTabbed">
+    <TabbedPage.Children>
+        <NavigationPage  Icon="Xamarin.png" Title="List">
+            <x:Arguments>
+            <local:ListItemView BindingContext="{Binding .}"/>
+                </x:Arguments>
+        </NavigationPage>
+        <local:ItemView BindingContext="{Binding Items[0]}" Title="First" Icon="Xamarin.png"/>
+        <local:ItemView BindingContext="{Binding Items[1]}" Title="Second" Icon="Xamarin.png"/>
+        <local:ItemView BindingContext="{Binding Items[2]}" Title="Third" Icon="Xamarin.png"/>
+    </TabbedPage.Children>
+</TabbedPage>
