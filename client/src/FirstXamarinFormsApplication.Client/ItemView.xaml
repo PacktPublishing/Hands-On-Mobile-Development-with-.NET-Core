@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+      
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:UIKit;assembly=Xamarin.iOS;targetPlatform=iOS"
+    xmlns:iosGraphics="clr-namespace:CoreGraphics;assembly=Xamarin.iOS;targetPlatform=iOS"
+    xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
+    xmlns:formsandroid="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Platform.Android;targetPlatform=Android"
+    xmlns:converters="using:FirstXamarinFormsApplication.Client.Converters" 
+    xmlns:effects="using:FirstXamarinFormsApplication.Client.Effects"
+    xmlns:actions="using:FirstXamarinFormsApplication.Client.Actions"        
+    
+    x:Class="FirstXamarinFormsApplication.Client.ItemView">
+<!--    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Action" Order="Primary" Text="Edit" Priority="0" Command="{Binding ChangeTitleCommand}" />
+        <ToolbarItem Name="Another" Order="Primary" Text="Delete" Priority="1" />
+    </ContentPage.ToolbarItems>-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:DateFormatConverter x:Key="DateFormatConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10" Orientation="Vertical" Spacing="10">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label HorizontalOptions="StartAndExpand" Text="{Binding Title, Mode=OneTime}" FontSize="Large">
+                    <Label.Triggers>
+                            <DataTrigger TargetType="Label" Binding="{Binding Source={x:Reference ReleaseDate},
+                                       Path=Text}" Value="Release Unknown">
+                                <Setter Property="TextColor" Value="Red" />
+                            </DataTrigger>
+                        </Label.Triggers>    
+                    </Label>
+<Label x:Name="ReleaseDate" Text="{Binding ReleaseDate, StringFormat='Release {0:M/d/yyyy}', TargetNullValue='Release Unknown'}" Font="Small" VerticalTextAlignment="Center" HorizontalOptions="End">
+    <Label.Triggers>
+        <MultiTrigger TargetType="Label">
+            <MultiTrigger.Conditions>
+                <PropertyCondition Property="Text" Value="Release Unknown" />
+                <BindingCondition Binding="{Binding IsReleased}" Value="false"/>
+            </MultiTrigger.Conditions>
+                                <MultiTrigger.EnterActions>
+                                    <actions:ChangeStateAction State="Unknown" />
+                                </MultiTrigger.EnterActions>
+        </MultiTrigger>
+    </Label.Triggers>
+           <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    
+                    <VisualState x:Name="Released">
+                        <VisualState.Setters>
+                            <Setter Property="BackgroundColor" Value="Lime" />
+                                        <Setter Property="TextColor" Value="Black" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="UnReleased">
+                        <VisualState.Setters>
+                             <Setter Property="TextColor" Value="Black" />
+                        </VisualState.Setters>
+                    </VisualState>
+                                                    <VisualState x:Name="Unknown">
+                        <VisualState.Setters>
+                                        <Setter Property="TextColor" Value="Red" />
+                        </VisualState.Setters>
+                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+</Label>
+                </StackLayout>
+                    <Image Source="{Binding Image}" HorizontalOptions="FillAndExpand">
+                <Image.Triggers>
+                        <EventTrigger Event="BindingContextChanged">  
+                            <actions:AppearingAction />
+                        </EventTrigger>
+                        </Image.Triggers>
+                </Image>
+<FlexLayout Direction="Row" Wrap="Wrap" FlowDirection="LeftToRight" AlignItems="Start">
+<Frame IsVisible="{Binding HasFeature1}" BackgroundColor="Gray" Style="{StaticResource ChipContainer}">
+    <Label x:Name="Feat1" Text="Feature 1"/>
+</Frame>
+    <Frame IsVisible="{Binding HasFeature2}" BackgroundColor="Lime" Style="{StaticResource ChipContainer}">
+        <Label x:Name="Feat2" Text="Feat. 2" Style="{StaticResource ChipLabel}" />
+    </Frame>
+    <Frame BackgroundColor="Blue" Style="{StaticResource ChipContainer}">
+        <Label x:Name="Feat3" Text="New Feature" Style="{StaticResource ChipLabel}" />
+    </Frame>
+    <Frame BackgroundColor="Yellow" Style="{StaticResource ChipContainer}">
+        <Label x:Name="Feat4" Text="Feature 4" Style="{StaticResource ChipLabel}" />
+    </Frame>
+    <Frame BackgroundColor="Maroon" Style="{StaticResource ChipContainer}">
+        <Label x:Name="Feat5" Text="Feature 5" Style="{StaticResource ChipLabel}" />
+    </Frame>
+    <Frame BackgroundColor="Olive" Style="{StaticResource ChipContainer}">
+        <Label x:Name="Feat6" Text="Feature 6" Style="{StaticResource ChipLabel}" />
+    </Frame>
+</FlexLayout>
+                
+<Label Text="{Binding Description}" effects:HtmlText.IsHtml="{Binding IsHtml}" FontSize="Large">
+<!--    <Label.Effects>
+        <effects:HtmlTextEffect HtmlText="&lt;b&gt;Here&lt;/b&gt; is some &lt;u&gt;HTML&lt;/u&gt;" />
+    </Label.Effects>-->
+</Label>
+<!--    <ios:UILabel Text="{Binding Description}" View.HorizontalOptions="Start" ShadowColor="{x:Static ios:UIColor.Gray}">
+            <ios:UILabel.ShadowOffset>
+                <iosGraphics:CGSize>
+                    <x:Arguments>
+                        <x:Single>1</x:Single>
+                        <x:Single>2</x:Single>
+                    </x:Arguments>
+                </iosGraphics:CGSize>
+            </ios:UILabel.ShadowOffset>
+    </ios:UILabel>-->
+                <!--<androidWidget:TextView Text="Native Text" x:Arguments="{x:Static formsandroid:Forms.Context}" />-->
+                <Label Text="Specifications" Font="Bold" />
+                <Grid IsVisible="{Binding Path=IsVisible,Source={x:Reference Feat1}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="5*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Specification 1" Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="Value for Specification" Grid.Column="1" Grid.Row="0" TextColor="Gray"/>
+                    <Label Text="Another Spec." Grid.Column="0" Grid.Row="1" />
+                    <Label Text="Value for Specification that is a little longer" Grid.Column="1" Grid.Row="1" TextColor="Gray"/>
+                    <Label Text="Specification 3" Grid.Column="0" Grid.Row="2" />
+                    <Label Text="Value for Specification" Grid.Column="1" Grid.Row="2" TextColor="Gray"/>
+                    <Label Text="Final Value" Grid.Column="0" Grid.Row="3" />
+                     <Label Text="Value for Specification" Grid.Column="1" Grid.Row="3" TextColor="Gray"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

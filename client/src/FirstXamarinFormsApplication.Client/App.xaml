@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstXamarinFormsApplication.App">
+<Application.Resources>
+        
+    <ResourceDictionary>
+        <StyleSheet Source="Resources/ChipStyles.css" />
+        <ControlTemplate x:Key="PageTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter Grid.Row="0" Grid.Column="1" />
+                <BoxView Grid.Row="1" Grid.ColumnSpan="3" Color="Navy" />
+                <Label Grid.Row="1" Grid.Column="1" Text="(c) Hands-On Cross Platform 2018" TextColor="White" VerticalOptions="Center" />
+            </Grid>
+        </ControlTemplate>
+        <OnPlatform x:Key="UbuntuBold" x:TypeArguments="x:String">
+            <On Platform ="iOS">Ubuntu-Bold</On>
+            <On Platform ="Android">Ubuntu-Bold.ttf#Ubuntu-Bold</On>
+        </OnPlatform>
+        <OnPlatform x:Key="UbuntuItalic" x:TypeArguments="x:String">
+            <OnPlatform.iOS>Ubuntu-Italic</OnPlatform.iOS>
+            <OnPlatform.Android>Ubuntu-Italic.ttf#Ubuntu-Italic</OnPlatform.Android>
+        </OnPlatform>
+        <OnPlatform x:Key="UbuntuLight" x:TypeArguments="x:String">
+            <OnPlatform.iOS>Ubuntu-Light</OnPlatform.iOS>
+            <OnPlatform.Android>Ubuntu-Light.ttf#Ubuntu-Light</OnPlatform.Android>
+        </OnPlatform>
+        <OnPlatform x:Key="UbuntuRegular" x:TypeArguments="x:String">
+            <OnPlatform.iOS>Ubuntu-Regular</OnPlatform.iOS>
+            <OnPlatform.Android>Ubuntu-Regular.ttf#Ubuntu-Regular</OnPlatform.Android>
+        </OnPlatform>
+        <OnPlatform x:Key="UbuntuMedium" x:TypeArguments="x:String">
+            <OnPlatform.iOS>Ubuntu-Medium</OnPlatform.iOS>
+            <OnPlatform.Android>Ubuntu-Medium.ttf#Ubuntu-Medium</OnPlatform.Android>
+        </OnPlatform>
+<Style x:Key="BoldLabelStyle" TargetType="Label">
+    <Setter Property="FontFamily" Value="{StaticResource UbuntuBold}" />
+</Style>
+<Style TargetType="Label">
+    <Setter Property="FontFamily" Value="{StaticResource UbuntuRegular}" />
+</Style>
+<Style TargetType="Frame">
+    <Setter Property="HasShadow" Value="false" />
+</Style>
+<Style TargetType="Frame" x:Key="ChipContainer">
+    <Setter Property="CornerRadius" Value="7" />
+    <Setter Property="Padding" Value="3" />
+    <Setter Property="Margin" Value="3" />
+</Style>
+<Style TargetType="Label" x:Key="ChipLabel">
+    <Setter Property="VerticalTextAlignment" Value="Center" />
+    <Setter Property="HorizontalTextAlignment" Value="Center" />
+    <Setter Property="TextColor" Value="White" />
+</Style>
+    </ResourceDictionary>
+</Application.Resources>
+</Application>
