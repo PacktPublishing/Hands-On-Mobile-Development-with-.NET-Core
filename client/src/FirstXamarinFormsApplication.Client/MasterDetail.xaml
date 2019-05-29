@@ -1,44 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<MasterDetailPage 
-    xmlns:local="using:FirstXamarinFormsApplication.Client" 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="FirstXamarinFormsApplication.Client.MasterDetail">
-<MasterDetailPage.Master>
-    <ContentPage 
-        Title="Main" 
-        Padding="0,60,0,0"
-        Icon="slideout.png">
-        <StackLayout>
-            <ListView 
-                x:Name="listView" 
+<?xml version="1.0" encoding="UTF-8" ?>
+<MasterDetailPage
+    x:Class="FirstXamarinFormsApplication.Client.MasterDetail"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:client="clr-namespace:FirstXamarinFormsApplication.Client;assembly=FirstXamarinFormsApplication.Client">
+    <MasterDetailPage.Master>
+        <ContentPage
+            Title="Main"
+            Padding="0,60,0,0"
+            Icon="slideout.png">
+            <StackLayout>
+                <ListView
+                    x:Name="listView"
                     ItemTapped="Handle_ItemTapped"
-                ItemsSource="{Binding .}" 
-                SeparatorVisibility="None" 
-                VerticalOptions="Center">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Padding="5,10">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="30"/>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{Binding Icon}" />
-                                <Label Grid.Column="1" Text="{Binding Title}" />
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage>
-</MasterDetailPage.Master>
-<MasterDetailPage.Detail>
-    <NavigationPage Title="List">
-        <x:Arguments>
-            <local:ListItemView />
-        </x:Arguments>
-    </NavigationPage>
-</MasterDetailPage.Detail>
+                    ItemsSource="{Binding .}"
+                    SeparatorVisibility="None"
+                    VerticalOptions="Center">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="5,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="30" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Source="{Binding Icon}" />
+                                    <Label Grid.Column="1" Text="{Binding Title}" />
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage Title="List">
+            <x:Arguments>
+                <client:ListItemView />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
 </MasterDetailPage>
