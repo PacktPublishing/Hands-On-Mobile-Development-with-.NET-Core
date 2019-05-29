@@ -6,7 +6,7 @@ using FirstXamarinFormsApplication.Client.Diagnostics;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-[assembly: InternalsVisibleTo("FirstXamarinFormsApplication.Client.Tests")]
+[assembly: InternalsVisibleTo("NetCore.Mobile.Tests")]
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace FirstXamarinFormsApplication

@@ -143,9 +143,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FirstXamarinFormsApplication.Client\FirstXamarinFormsApplication.Client.csproj">
+    <ProjectReference Include="..\FirstXamarinFormsApplication.Client\NetCore.Mobile.Client.csproj">
       <Project>{752808b7-c853-4dfb-8347-4cbf2d3e88d9}</Project>
-      <Name>FirstXamarinFormsApplication.Client</Name>
+      <Name>NetCore.Mobile.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

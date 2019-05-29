@@ -3,7 +3,7 @@
     x:Class="FirstXamarinFormsApplication.Client.ItemsCarousel"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:client="clr-namespace:FirstXamarinFormsApplication.Client;assembly=FirstXamarinFormsApplication.Client"
+    xmlns:client="clr-namespace:FirstXamarinFormsApplication.Client;assembly=NetCore.Mobile.Client"
     xmlns:local="using:FirstXamarinFormsApplication.Client">
     <CarouselPage.Children>
         <client:ListItemView BindingContext="{Binding .}" />
