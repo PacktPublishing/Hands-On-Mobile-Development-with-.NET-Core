@@ -20,37 +20,39 @@ namespace NetCore.Web.UsersApi.Controllers
         public NotificationController()
         {
             // Initialize the Notification Hub
-            NotificationHubClient _hub = NotificationHubClient.CreateClientFromConnectionString("", "")
+            NotificationHubClient _hub = NotificationHubClient.CreateClientFromConnectionString("", "");
         }
 
         public async Task<IActionResult> Send(NotificationRequest request)
         {
-if (request.Message is SimpleNotificationMessage simpleMessage)
-{
-    foreach (var message in simpleMessage.GetPlatformMessages())
-    {
-        switch (message.Item1)
-        {
-            case "wns":
-                await _hub.SendWindowsNativeNotificationAsync(message.Item2, 
-                    $"username:{request.Destination}");
-                break;
-            case "aps":
-                await _hub.SendAppleNativeNotificationAsync(message.Item2,
-                    $"username:{request.Destination}");
-                break;
-            case "fcm":
-                await _hub.SendFcmNativeNotificationAsync(message.Item2, 
-                    $"username:{request.Destination}");
-                break;;
-        }
-    }
+            if (request.Message is SimpleNotificationMessage simpleMessage)
+            {
+                foreach (var message in simpleMessage.GetPlatformMessages())
+                {
+                    switch (message.Item1)
+                    {
+                        case "wns":
+                            await _hub.SendWindowsNativeNotificationAsync(message.Item2, 
+                                $"username:{request.Destination}");
+                            break;
+                        case "aps":
+                            await _hub.SendAppleNativeNotificationAsync(message.Item2,
+                                $"username:{request.Destination}");
+                            break;
+                        case "fcm":
+                            await _hub.SendFcmNativeNotificationAsync(message.Item2, 
+                                $"username:{request.Destination}");
+                            break;;
+                    }
+                }
 
-}
-else if(request.Message is TemplateNotificationMessage templateMessage)
-{
-    await _hub.SendTemplateNotificationAsync(templateMessage.Parameters, $"username:{request.Destination}");
-}
+            }
+            else if (request.Message is TemplateNotificationMessage templateMessage)
+            {
+                await _hub.SendTemplateNotificationAsync(templateMessage.Parameters, $"username:{request.Destination}");
+            }
+
+            return Ok();
         }
 
         [HttpPost("register")]
@@ -99,57 +101,65 @@ else if(request.Message is TemplateNotificationMessage templateMessage)
             {
                 Body = "{\"aps\": {\"alert\" : \"Hi ${FullName} welcome to Auctions!\" }}"
             });
+
+            return Ok();
         }
 
-        public class NotificationRequest
+        public string GetCurrentUser()
         {
-            public BaseNotificationMessage Message { get; set; }
-
-            public string Destination { get; set; }
+            // TODO:
+            return string.Empty;
         }
+    }
 
-        public abstract class BaseNotificationMessage
+    public class NotificationRequest
+    {
+        public BaseNotificationMessage Message { get; set; }
+
+        public string Destination { get; set; }
+    }
+
+    public abstract class BaseNotificationMessage
+    {
+
+    }
+
+    public class TemplateNotificationMessage : BaseNotificationMessage
+    {
+        public string TemplateTag { get; set; }
+
+        public Dictionary<string, string> Parameters { get; set; }
+    }
+
+    public class SimpleNotificationMessage : BaseNotificationMessage
+    {
+        public string Message { get; set; }
+
+        public IEnumerable<(string, string)> GetPlatformMessages()
         {
+            yield return ("wns",
+                             @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + Message +
+                             "</text></binding></visual></toast>");
 
+            yield return ("apns", "{\"aps\":{\"alert\":\"" + Message + "\"}}");
+
+            yield return ("fcm", "{\"data\":{\"message\":\"" + Message + "\"}}");
         }
+    }
 
-        public class TemplateNotificationMessage : BaseNotificationMessage
-        {
-            public string TemplateTag { get; set; }
+    public class DeviceRegistration
+    {
+        public string RegistrationId { get; set; } // Registration Id
+        public string Platform { get; set; } // wns, apns, fcm
+        public string Handle { get; set; } // token or uri
+        public string[] Tags { get; set; } // any additional tags
+    }
 
-            public Dictionary<string, string> Parameters { get; set; }
-        }
-
-        public class SimpleNotificationMessage : BaseNotificationMessage
-        {
-            public string Message { get; set; }
-
-            public IEnumerable<(string, string)> GetPlatformMessages()
-            {
-                yield return ("wns",
-                    @"<toast><visual><binding template=""ToastText01""><text id=""1"">" + Message +
-                    "</text></binding></visual></toast>");
-
-                yield return ("apns", "{\"aps\":{\"alert\":\"" + Message + "\"}}");
-
-                yield return ("fcm", "{\"data\":{\"message\":\"" + Message + "\"}}");
-            }
-        }
-
-        public class DeviceRegistration
-        {
-            public string RegistrationId { get; set; } // Registration Id
-            public string Platform { get; set; } // wns, apns, fcm
-            public string Handle { get; set; } // token or uri
-            public string[] Tags { get; set; } // any additional tags
-        }
-
-        class DeviceInstallation
-        {
-            public string InstallationId { get; set; }
-            public string Platform { get; set; }
-            public string PushChannel { get; set; }
-            public string[] Tags { get; set; }
-        }
+    public class DeviceInstallation
+    {
+        public string InstallationId { get; set; }
+        public string Platform { get; set; }
+        public string PushChannel { get; set; }
+        public string[] Tags { get; set; }
     }
 }
