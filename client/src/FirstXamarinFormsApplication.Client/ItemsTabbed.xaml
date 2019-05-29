@@ -3,7 +3,7 @@
     x:Class="FirstXamarinFormsApplication.Client.ItemsTabbed"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:client="clr-namespace:FirstXamarinFormsApplication.Client;assembly=FirstXamarinFormsApplication.Client">
+    xmlns:client="clr-namespace:FirstXamarinFormsApplication.Client;assembly=NetCore.Mobile.Client">
     <TabbedPage.Children>
         <NavigationPage Title="List" Icon="Xamarin.png">
             <x:Arguments>
