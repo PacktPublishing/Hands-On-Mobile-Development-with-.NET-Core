@@ -1,16 +1,26 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TabbedPage 
+<?xml version="1.0" encoding="UTF-8" ?>
+<TabbedPage
+    x:Class="FirstXamarinFormsApplication.Client.ItemsTabbed"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:local="using:FirstXamarinFormsApplication.Client"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FirstXamarinFormsApplication.Client.ItemsTabbed">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:client="clr-namespace:FirstXamarinFormsApplication.Client;assembly=FirstXamarinFormsApplication.Client">
     <TabbedPage.Children>
-        <NavigationPage  Icon="Xamarin.png" Title="List">
+        <NavigationPage Title="List" Icon="Xamarin.png">
             <x:Arguments>
-            <local:ListItemView BindingContext="{Binding .}"/>
-                </x:Arguments>
+                <client:ListItemView BindingContext="{Binding .}" />
+            </x:Arguments>
         </NavigationPage>
-        <local:ItemView BindingContext="{Binding Items[0]}" Title="First" Icon="Xamarin.png"/>
-        <local:ItemView BindingContext="{Binding Items[1]}" Title="Second" Icon="Xamarin.png"/>
-        <local:ItemView BindingContext="{Binding Items[2]}" Title="Third" Icon="Xamarin.png"/>
+        <client:ItemView
+            Title="First"
+            BindingContext="{Binding Items[0]}"
+            Icon="Xamarin.png" />
+        <client:ItemView
+            Title="Second"
+            BindingContext="{Binding Items[1]}"
+            Icon="Xamarin.png" />
+        <client:ItemView
+            Title="Third"
+            BindingContext="{Binding Items[2]}"
+            Icon="Xamarin.png" />
     </TabbedPage.Children>
 </TabbedPage>

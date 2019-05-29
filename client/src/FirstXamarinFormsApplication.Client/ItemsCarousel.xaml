@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<CarouselPage 
-    xmlns="http://xamarin.com/schemas/2014/forms" 
+<?xml version="1.0" encoding="UTF-8" ?>
+<CarouselPage
+    x:Class="FirstXamarinFormsApplication.Client.ItemsCarousel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="using:FirstXamarinFormsApplication.Client"
-    x:Class="FirstXamarinFormsApplication.Client.ItemsCarousel">
+    xmlns:client="clr-namespace:FirstXamarinFormsApplication.Client;assembly=FirstXamarinFormsApplication.Client"
+    xmlns:local="using:FirstXamarinFormsApplication.Client">
     <CarouselPage.Children>
-        <local:ListItemView BindingContext="{Binding .}" />
-        <local:ItemView BindingContext="{Binding Items[0]}"/>
+        <client:ListItemView BindingContext="{Binding .}" />
+        <client:ItemView BindingContext="{Binding Items[0]}" />
     </CarouselPage.Children>
 </CarouselPage>

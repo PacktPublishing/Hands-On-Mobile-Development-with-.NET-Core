@@ -3,17 +3,34 @@
     x:Class="FirstXamarinFormsApplication.Client.ListItemView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    ControlTemplate="{StaticResource PageTemplate}"
     Title="List">
-    <!--    <ContentPage.ToolbarItems>
-        <ToolbarItem Name="Action" Order="Primary" Text="Edit" Priority="0" Command="{Binding ChangeTitleCommand}" />
-        <ToolbarItem Name="Another" Order="Primary" Text="Delete" Priority="1" />
-    </ContentPage.ToolbarItems>-->
-    <!--<NavigationPage.TitleView>
-    <StackLayout Orientation="Horizontal" VerticalOptions="Center" Spacing="10">
-        <Image Source="Xamarin.png"/>
-        <Label Text="Custom Title View" FontSize="16" TextColor="Black" VerticalTextAlignment="Center" />
-    </StackLayout>
-</NavigationPage.TitleView>-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Name="Action"
+            Command="{Binding ChangeTitleCommand}"
+            Order="Primary"
+            Priority="0"
+            Text="Edit" />
+        <ToolbarItem
+            Name="Another"
+            Order="Primary"
+            Priority="1"
+            Text="Delete" />
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+        <StackLayout
+            Orientation="Horizontal"
+            Spacing="10"
+            VerticalOptions="Center">
+            <Image Source="Xamarin.png" />
+            <Label
+                FontSize="16"
+                Text="Custom Title View"
+                TextColor="Black"
+                VerticalTextAlignment="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <AbsoluteLayout>
             <ListView

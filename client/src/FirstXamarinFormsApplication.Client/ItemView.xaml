@@ -10,12 +10,12 @@
     xmlns:converters="using:FirstXamarinFormsApplication.Client.Converters" 
     xmlns:effects="using:FirstXamarinFormsApplication.Client.Effects"
     xmlns:actions="using:FirstXamarinFormsApplication.Client.Actions"        
-    
+       ControlTemplate="{StaticResource PageTemplate}"
     x:Class="FirstXamarinFormsApplication.Client.ItemView">
-<!--    <ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
         <ToolbarItem Name="Action" Order="Primary" Text="Edit" Priority="0" Command="{Binding ChangeTitleCommand}" />
         <ToolbarItem Name="Another" Order="Primary" Text="Delete" Priority="1" />
-    </ContentPage.ToolbarItems>-->
+    </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
             <converters:DateFormatConverter x:Key="DateFormatConverter" />

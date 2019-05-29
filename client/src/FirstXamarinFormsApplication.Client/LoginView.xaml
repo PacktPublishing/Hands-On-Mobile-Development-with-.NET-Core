@@ -5,6 +5,7 @@
     x:Class="FirstXamarinFormsApplication.LoginView"
     x:Name="RootView"
     xmlns:local="clr-namespace:FirstXamarinFormsApplication"
+     ControlTemplate="{StaticResource PageTemplate}"
     xmlns:controls="using:FirstXamarinFormsApplication.Client.Controls"
     xmlns:androidWidget="clr-namespace:Android.Widget;assembly=Mono.Android;targetPlatform=Android"
     xmlns:effects="using:FirstXamarinFormsApplication.Client.Effects"
