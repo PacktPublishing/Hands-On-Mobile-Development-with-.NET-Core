@@ -1,7 +1,7 @@
 
 # Hands-On Mobile Development with .NET Core
 
-<a href="Packt UTM URL of the Book"><img src="Cover Image URL of the Book" alt="Book Name" height="256px" align="right"></a>
+
 
 This is the code repository for [Hands-On Mobile Development with .NET Core], published by Packt.
 
