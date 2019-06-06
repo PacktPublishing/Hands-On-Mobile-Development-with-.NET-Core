@@ -67,13 +67,13 @@ With the following software and hardware list you can run all code files present
 
 ### Software and Hardware List
 
-| Chapter      | Software required                   | OS required                        | Hardware specifications | Free/Proprietary
-| -------------| ------------------------------------| -----------------------------------|-------------------------|
-| All          | Xamarin Development Tools           | Windows                            | System with 16GB RAM    | 
-| All          | Xamarin Development Tools           | Mac OS X                           | System with 16GB RAM    | 
-| All(Optional)| VMWare                              | Mac OS X                           | System with 16GB RAM    | 88,95 Euros
-| All(Optional)| Parallels                           | Mac OS X                           | System with 16GB RAM    | $79.99
-| All          | XCode                               | Mac OS X                           |                         |
+| Chapter      | Software required                   | OS required              | Hardware specifications | Free/Proprietary
+| -------------| ------------------------------------| -------------------------|-------------------------|
+| All          | Xamarin Development Tools           | Windows                  | System with 16GB RAM    | 
+| All          | Xamarin Development Tools           | Mac OS X                 | System with 16GB RAM    | 
+| All(Optional)| VMWare                              | Mac OS X                 | System with 16GB RAM    | 88,95 Euros
+| All(Optional)| Parallels                           | Mac OS X                 | System with 16GB RAM    | $79.99
+| All          | XCode                               | Mac OS X                 |                         |
 | 6            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
 | 7            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
 | 8            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
