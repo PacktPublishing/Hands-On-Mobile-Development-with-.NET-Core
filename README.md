@@ -3,7 +3,7 @@
 
 <a href="Packt UTM URL of the Book"><img src="Cover Image URL of the Book" alt="Book Name" height="256px" align="right"></a>
 
-This is the code repository for [Hands-On Mobile Development with .NET Core](Packt UTM URL of the Book), published by Packt.
+This is the code repository for [Hands-On Mobile Development with .NET Core], published by Packt.
 
 **Build cross-platform mobile applications with Xamarin, Visual Studio 2019, and .NET Core 3**
 
@@ -25,15 +25,40 @@ alt="https://www.packtpub.com/" border="5" /></a>
 
 
 ## Instructions and Navigations
-All of the code is organized into folders. For example, Chapter02.
+The chapters dealing with Azure services would require an Azure subscription to be
+created. With current subscription model, when an Azure free subscription is created, you
+can get $200 credit for premium services, 12 months of free usage for certain services and a
+set of services are free without limitation.
+.NET Core and Xamarin development chapters would require an IDE such as Visual Studio
+2019 and/or Visual Studio for Mac. Both of these applications are available with a freemium
+model. In other words, the community edition for both applications are available with
+certain limitations. Visual Studio code can be an open source alternative for these IDEs
+when dealing with Azure service implementations.
+If the development environment is setup on a macOS workstation, then Windows VM
+might be required for certain development and deployment scenarios. While alternatives
+are listed above, additional options are available for these type of a setup. Both of the
+alternatives (that is, Parallels and VMWare) have trial versions available.
+Online SaaS product offers such as Azure DevOps and Visual Studio App centre are also
+freemium products. Nevertheless, the feature set offered with the free subscription should
+be enough for the majority of the samples outlined in this book.
+
+All of the code is organizes into two projects. That is Client and Web
 
 The code will look like the following:
 ```
-if (test expression)
+namespace FirstXamarinFormsApplication
 {
-  Statement upon condition is true
+  public partial class MainPage : ContentPage
+  {
+    public MainPage()
+    {
+      InitializeComponent();
+      BindingContext = new MainPageViewModel();
+    }
+  }
 }
 ```
+
 
 **Following is what you need for this book:**
 Copy and paste the Audience section from the EPIC.
@@ -42,23 +67,23 @@ With the following software and hardware list you can run all code files present
 
 ### Software and Hardware List
 
-| Chapter  | Software required                   | OS required                        |
-| -------- | ------------------------------------| -----------------------------------|
-| 1        | R version 3.3.0                     | Windows, Mac OS X, and Linux (Any) |
-| 2        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 3        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 4        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 5        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 6        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 7        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 8        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 9        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 10        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 11        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 12        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 13        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 14        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 15        | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| Chapter      | Software required                   | OS required                        | Hardware specifications
+| --------     | ------------------------------------| -----------------------------------|
+| All          | Xamarin Development Tools           | Windows                            | System with 16GB RAM
+| All          | Xamarin Development Tools           | Mac OS X                           | System with 16GB RAM
+| All(Optional)| VMWare            | Windows, Mac OS X, and Linux (Any) |
+| 4            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 5            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 6            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 7            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 8            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 9            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 10           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 11           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 12           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 13           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 14           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| 15           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
 
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](Graphics Bundle Link).
