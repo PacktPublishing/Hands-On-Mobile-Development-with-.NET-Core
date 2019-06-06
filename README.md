@@ -90,11 +90,10 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 * Xamarin.Forms Projects [[Packt]](https://www.packtpub.com/application-development/xamarinforms-projects?utm_source=Github&utm_medium=Repository&utm_campaign=9781789537505) [[Amazon]](https://www.amazon.com/dp/1789537509)
 
 ## Get to Know the Author
-**Author Name**
-Bio
+**Can Bilgin**
+currently works with Authority Partners Inc. as a Solution Architect. He has been working in the software industry, primarily with Microsoft technologies, for over a decade and has been recognized as a Microsoft Most Valuable Professional for his technical contributions between 2014 and 2018. In this period, he took key roles in projects for high profile clients using technologies such as BizTalk, SharePoint, Dynamics CRM, Xamarin, WCF, Azure Serverless and other web/cloud technologies. He is passionate about mobile
+and IoT development using the modern tools available for developers. He shares his experience on his blog, social media and through speaking engagements in local and international community events.
 
-**Author Name**
-Bio
 
 
 ### Suggestions and Feedback
