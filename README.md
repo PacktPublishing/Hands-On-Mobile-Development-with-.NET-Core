@@ -87,9 +87,9 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 ### Related products <Paste books from the Other books you may enjoy section>
 * Hands-On Domain-Driven Design with .NET Core [[Packt]](https://www.packtpub.com/catalog/product/view/id/55713/s/application-development%252Fhands-domain-driven-design-net/?utm_source=Github&utm_medium=Repository&utm_campaign=9781788834094) [[Amazon]](https://www.amazon.com/dp/1788834097)
 
-* Linux Device Drivers Development [[Packt]](https://www.packtpub.com/networking-and-servers/linux-device-drivers-development?utm_source=github&utm_medium=repository&utm_campaign=9781785280009) [[Amazon]](https://www.amazon.com/dp/1788293770)
+* Xamarin.Forms Projects [[Packt]](https://www.packtpub.com/application-development/xamarinforms-projects?utm_source=Github&utm_medium=Repository&utm_campaign=9781789537505) [[Amazon]](https://www.amazon.com/dp/1789537509)
 
-## Get to Know the Author(s)
+## Get to Know the Author
 **Author Name**
 Bio
 
