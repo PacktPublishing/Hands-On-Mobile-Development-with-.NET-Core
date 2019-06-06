@@ -74,16 +74,12 @@ With the following software and hardware list you can run all code files present
 | All(Optional)| VMWare                              | Mac OS X                 | System with 16GB RAM    | 88,95 Euros      |
 | All(Optional)| Parallels                           | Mac OS X                 | System with 16GB RAM    | $79.99           |
 | All          | XCode                               | Mac OS X                 |                         |
-| 6            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any)                 |
-| 7            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any)                 |
-| 8            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any)                 |
-| 9            | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any)                 |
-| 10           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 11           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 12           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 13           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 14           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
-| 15           | Rstudio Desktop 0.99.903            | Windows, Mac OS X, and Linux (Any) |
+| All          | Visual Studio for Mac               | Mac OS X                 |                         | Proprietary
+| All          | Visual Studio2017/2019              | Windows                  |                         | Proprietary
+| All          | Visual Studio Code                  | Windows, Mac OS X        |                         |
+| 9            | Docker Desktop                      | Windows, Mac OS X        |                         |
+| All          | .NET Core SDK                       | Windows, Mac OS X        |                         |
+
 
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](Graphics Bundle Link).
